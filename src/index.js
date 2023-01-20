@@ -37,9 +37,6 @@ class Board extends React.Component {
             squares: squares,
             xIsNext: !this.state.xIsNext,
         });
-        this.setState({
-            xIsNext: false,
-        });
         // print the xIsNext value
         console.log("xIsNext", this.state.xIsNext);
 
