@@ -69,16 +69,25 @@ class Game extends React.Component {
         }
 
 
-        squares[i] = this.state.xIsNext ? 'X' : 'O';
+        squares[i] = 'X';
+        // choose a random unselcted square for the computer
+        let emptySquares = [];
+        for (let i = 0; i < squares.length; i++) {
+            if (squares[i] === null) {
+                emptySquares.push(i);
+            }
+        }
+        let randomIndex = Math.floor(Math.random() * emptySquares.length);
+        let randomSquare = emptySquares[randomIndex];
+        squares[randomSquare] = 'O';
+
         this.setState({
             history: history.concat([{
                 squares: squares,
             }]),
             stepNumber: history.length,
-            xIsNext: !this.state.xIsNext,
+            xIsNext: true,
         });
-        // print the xIsNext value
-        console.log("xIsNext", this.state.xIsNext);
     }
 
     jumpTo(step) {
@@ -108,11 +117,12 @@ class Game extends React.Component {
         if (winner) {
             status = 'Winner: ' + winner;
         } else {
-            status = 'Next player: ' + (this.state.xIsNext ? 'X' : 'O');
+            status = 'Next player: ' + 'X';
         }
         return (
             <div className="game">
                 <div className="game-board">
+                    <div className="Title">moves</div>
                     <Board
                         squares={current.squares}
                         onClick={(i) => this.handleClick(i)}
