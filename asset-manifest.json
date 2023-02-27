@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/ttt-react/static/css/main.82534d5b.css",
-    "main.js": "/ttt-react/static/js/main.3a3d3fac.js",
+    "main.js": "/ttt-react/static/js/main.d6dda019.js",
     "static/media/DALL·E 2023-02-26 16.46.34 - Tic Tac Toe background abstract hearts.png": "/ttt-react/static/media/DALL·E 2023-02-26 16.46.34 - Tic Tac Toe background abstract hearts.a51353d86f8bb4a93ef8.png",
     "index.html": "/ttt-react/index.html",
     "main.82534d5b.css.map": "/ttt-react/static/css/main.82534d5b.css.map",
-    "main.3a3d3fac.js.map": "/ttt-react/static/js/main.3a3d3fac.js.map"
+    "main.d6dda019.js.map": "/ttt-react/static/js/main.d6dda019.js.map"
   },
   "entrypoints": [
     "static/css/main.82534d5b.css",
-    "static/js/main.3a3d3fac.js"
+    "static/js/main.d6dda019.js"
   ]
 }
