@@ -113,16 +113,20 @@ class Game extends React.Component {
             );
         });
 
+        console.log(history);
+
         let status;
+        let hiddenMessage;
         if (winner) {
             status = 'Winner: ' + winner;
+            hiddenMessage = 'Wuv you Ari <3';
         } else {
-            status = 'Next player: ' + 'X';
+            status = 'Next player: X';
         }
         return (
             <div className="game">
                 <div className="game-board">
-                    <div className="Title">moves</div>
+                    <div className="title">{hiddenMessage}</div>
                     <Board
                         squares={current.squares}
                         onClick={(i) => this.handleClick(i)}
