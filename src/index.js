@@ -118,8 +118,13 @@ class Game extends React.Component {
         let status;
         let hiddenMessage;
         if (winner) {
-            status = 'Winner: ' + winner;
-            hiddenMessage = 'Wuv you Ari <3';
+            if (winner === 'X') {
+                status = 'Winner: ' + winner;
+                hiddenMessage = 'Hi Risa! :D';
+            } else if (winner === 'O') {
+                status = 'Computer wins!';
+                hiddenMessage = 'Better luck next time, Risa';
+            }
         } else {
             status = 'Next player: X';
         }
@@ -157,8 +162,8 @@ function calculateWinner(squares) {
         [0, 4, 8],
         [2, 4, 6],
     ];
-    for (let i = 0; i < lines.length; i++) {
-        const [a, b, c] = lines[i];
+    for (const element of lines) {
+        const [a, b, c] = element;
         if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
             return squares[a];
         }
