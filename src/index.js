@@ -126,8 +126,14 @@ class Game extends React.Component {
                 hiddenMessage = 'Better luck next time, Risa';
             }
         } else {
-            status = 'Next player: X';
+            if (current.squares.every(square => square)) { // Check if all squares are filled
+                status = 'Game ended in a draw';
+                hiddenMessage = 'Well played, Risa! It\'s a tie!';
+            } else {
+                status = 'Next player: X';
+            }
         }
+
         return (
             <div className="game">
                 <div className="game-board">
